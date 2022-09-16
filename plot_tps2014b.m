@@ -55,7 +55,7 @@ function hndl = plot_tps2014b (data)
   % Check that all the channels share the same horizontal scale
   flag = true;
   for n = 2 : nbChannels
-    if ~( (data(n).Info.length ~= data(1).Info.length)  &&  all(data(n).time == data(1).time) )
+    if ~( (data(n).Info.length == data(1).Info.length)  &&  all(data(n).time == data(1).time) )
       flag = false;
       warning('The channels don''t have the same time scale');
       break;
